@@ -184,6 +184,9 @@ và quyết định thiết kế, không chép lại toàn bộ QA.
 
 ### Exercise 3.2 — Benchmark Run
 
+> [!NOTE]
+> **Ghi chú LLM Provider**: Dự án sử dụng **OpenRouter API** (`https://openrouter.ai/api/v1`) làm LLM Provider thông qua OpenAI-compatible client (`OpenAIGenerator` trong `domain_assistant.py`). Model cụ thể được dùng để sinh 20 câu trả lời RAG thực tế là **`openai/gpt-4o-mini`**.
+
 Chạy:
 
 ```bash
