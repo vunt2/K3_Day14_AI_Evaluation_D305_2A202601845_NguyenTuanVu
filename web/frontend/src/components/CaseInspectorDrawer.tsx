@@ -219,7 +219,7 @@ export const CaseInspectorDrawer: React.FC<CaseInspectorDrawerProps> = ({ caseId
             </div>
 
             {/* 5 Whys Failure Analysis Section (If available) */}
-            {detail.five_whys && (
+            {detail.five_whys ? (
               <div className="glass-panel p-5 rounded-2xl border border-status-danger/30 bg-status-danger/5 space-y-4">
                 <div className="flex items-center space-x-2 text-status-danger font-bold text-sm">
                   <ShieldAlert className="w-4 h-4" />
@@ -241,6 +241,18 @@ export const CaseInspectorDrawer: React.FC<CaseInspectorDrawerProps> = ({ caseId
                     {detail.proposed_fix}
                   </div>
                 )}
+              </div>
+            ) : (
+              <div className="p-4 bg-status-success/10 border border-status-success/20 rounded-2xl text-xs text-slate-300 font-mono flex items-center space-x-3">
+                <CheckCircle2 className="w-5 h-5 text-status-success shrink-0" />
+                <div>
+                  <div className="font-bold text-status-success mb-0.5">Trạng thái 5-Whys:</div>
+                  <p className="text-slate-300 font-sans">
+                    {detail.passed
+                      ? 'Case này đã PASSED thành công (không bị lỗi nên không cần mổ xẻ 5-Whys). Phân tích 5-Whys chi tiết áp dụng cho các ca thất bại (như A02, A01, H01).'
+                      : 'Ca này không thuộc nhóm ca lỗi được mổ xẻ 5-Whys sâu trong bài lab.'}
+                  </p>
+                </div>
               </div>
             )}
           </div>

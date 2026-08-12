@@ -126,7 +126,7 @@ export const GuidedDemoPanel: React.FC<GuidedDemoPanelProps> = ({ cases, onSelec
                 onClick={() => onSelectCaseForInspector(activeCaseDetail.id)}
                 className="text-xs font-mono text-brand-primary hover:underline flex items-center space-x-1"
               >
-                <span>Soi chi tiết Word-level Diff & 5-Whys</span>
+                <span>Soi chi tiết Word-level Diff {activeCaseDetail.five_whys ? '& 5-Whys' : ''}</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>
